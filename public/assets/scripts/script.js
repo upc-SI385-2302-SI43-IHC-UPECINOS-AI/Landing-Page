@@ -24,3 +24,13 @@ document.getElementById('subscription-form').addEventListener('submit', function
     event.preventDefault();
     alert('Subscription form submitted!'); 
 });
+
+
+
+/**/
+function toggleFAQ(index) {
+    var answers = document.querySelectorAll('.faq-answer');
+    var answer = answers[index];
+    var displayStyle = window.getComputedStyle(answer).display;
+    answer.style.display = displayStyle === 'none' ? 'block' : 'none';
+  }
