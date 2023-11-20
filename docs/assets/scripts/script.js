@@ -19,14 +19,6 @@ function moveSlide(direction) {
   const transformValue = -(currentSlideIndex * slideWidth);
   blogContent.style.transform = `translateX(${transformValue}px)`;
 }
-
-document.getElementById('subscription-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    alert('Subscription form submitted!'); 
-});
-
-
-
 /**/
 function toggleFAQ(index) {
     var answers = document.querySelectorAll('.faq-answer');
@@ -34,3 +26,17 @@ function toggleFAQ(index) {
     var displayStyle = window.getComputedStyle(answer).display;
     answer.style.display = displayStyle === 'none' ? 'block' : 'none';
   }
+
+/*
+
+function toggleNav() {
+  var navItems = document.querySelector('.navbar');
+  var navAuth=document.querySelector('.auth');
+  navItems.classList.toggle('active');
+  navAuth.classList.toggle('active');
+}
+*/
+function toggleNav() {
+  var navbar = document.querySelector('.navbar');
+  navbar.classList.toggle('nav-active');
+}

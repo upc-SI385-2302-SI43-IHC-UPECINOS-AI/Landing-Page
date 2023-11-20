@@ -6,7 +6,6 @@ body, html {
     height: 100%;
     
   }
-  
   .navbar {
       background-color: white;
       display: flex;
@@ -92,23 +91,41 @@ body, html {
       font-family: 'Inter', sans-serif;
   
     }
+
+    .hamburger-icon {
+      display: none; /* Oculto por defecto */
+      cursor: pointer;
+      font-size: 24px;
+      background: none;
+      border: none;
+      margin-right: 10px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .hamburger-icon {
+        display: block; /* Muestra el ícono de hamburguesa en pantallas pequeñas */
+      }
+    
+      /* Oculta los elementos del menú en pantallas pequeñas */
+      .nav-items, .auth {
+        display: none;
+      }
+    
+      /* Muestra el menú cuando se hace clic en el ícono de hamburguesa */
+      .nav-active .nav-items, .nav-active .auth {
+        display: block;
+        flex-direction: column;
+      }
+    }
   
     .signup-button:hover{
       font-weight: bold;
       display: inline-block;
       transform: scale(1.1); 
     }
-    
-    @media (max-width: 768px) {
-      .navbar {
-        flex-direction: column;
-      }
-    
-      .nav-items {
-        flex-direction: column;
-      }
-    }
   
+    
+    
    /**/
   
     .hero-section {
@@ -1279,27 +1296,6 @@ margin-top: 100px;
     margin:10px 0;
 }
 
-.imagen_seccion1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.icono_play i{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 50px;
-    color: #7ABD8D;
-    position: absolute;
-    top: 400px;
-    left: 50%;
-}
-
-.imagen_seccion1 img{
-    border-radius: 2% 2% 2% 2%;
-}
-
 .beneficios, .beneficios-2{
   display: flex;
   justify-content:space-evenly;
@@ -1776,6 +1772,33 @@ word-wrap: break-word;
 .icon-card-03 img {
   width: 30px; /* Adjust as needed */
   height: 30px; /* Adjust as needed */
+}
+
+/**/
+.video-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow: hidden; 
+  transition: transform 0.3s ease;
+}
+
+.video-container iframe{
+  width: 80%;
+  height: 500px;
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.video-container:hover {
+  transform: scale(1.03); 
+}
+
+@media screen and (max-width: 720px) {
+  .video-container {
+    margin: 1em auto;
+  }
 }
 
 /**/
